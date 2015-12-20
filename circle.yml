@@ -1,3 +1,6 @@
+checkout:
+  post:
+    - cp .sample.env .env
 database:
   override:
     - bin/setup
