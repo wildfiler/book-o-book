@@ -13,6 +13,9 @@ gem 'jquery-rails'
 gem 'puma'
 gem 'haml'
 
+group :production do
+  gem 'rails_12factor'
+end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
