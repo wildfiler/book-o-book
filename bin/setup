@@ -5,7 +5,7 @@ set -e
 
 # Set up Ruby dependencies via Bundler
 gem install bundler --conservative
-bundle check || bundle install
+bundle install
 
 # Set up database and add any development seed data
 bin/rake dev:prime
@@ -16,6 +16,5 @@ mkdir -p .git/safe
 # Only if this isn't CI
 if [ -z "$CI" ]; then
   # Set up git repositories
-  git remote add origin git@github.com:wildfiler/book-o-book.git
   git remote add production https://git.heroku.com/book-o-book.git
 fi
