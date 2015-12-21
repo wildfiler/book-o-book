@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Book.delete_all
+
+50.times do
+  Book.create(
+    title: Faker::Company.catch_phrase,
+    description: Faker::Hacker.say_something_smart,
+    cover_url: Faker::Avatar.image(nil, '100x200')
+  )
+end

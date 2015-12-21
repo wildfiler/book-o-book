@@ -1,0 +1,8 @@
+= paginate @books
+
+.books
+  - @books.each do |book|
+    .book
+      .cover= image_tag book.cover_url
+      .title= book.title
+      .description= book.description
