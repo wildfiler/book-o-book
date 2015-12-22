@@ -5,7 +5,7 @@ class CreateAuthors < ActiveRecord::Migration
       t.string :last_name
       t.text :biography
 
-      t.timestamps null:false
+      t.timestamps null: false
     end
   end
 end
