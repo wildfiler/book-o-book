@@ -14,3 +14,13 @@ Book.delete_all
     cover_url: Faker::Avatar.image(nil, '100x200')
   )
 end
+
+Author.delete_all
+
+10.times do
+  Author.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    biography: Faker::Lorem.paragraph(5)
+  )
+end
