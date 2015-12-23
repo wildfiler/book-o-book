@@ -1,9 +1,15 @@
 !!!
 %head
-  %title BookOBook
-  = stylesheet_link_tag    'application', media: 'all'
+  %title Book-O-Book
+  = stylesheet_link_tag 'application', media: 'all'
 
   = csrf_meta_tags
 %body
-  = yield
+  %header
+    .logo= image_tag 'logo.png'
+    = render partial: 'menu'
+  .content
+    = yield
+  %footer
+    = render partial: 'logo_legal_notice'
   = javascript_include_tag 'application'
