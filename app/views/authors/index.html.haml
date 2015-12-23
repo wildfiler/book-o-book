@@ -7,5 +7,7 @@
       .biography= author.biography
       %ul.author-books
         - author.last_5_books.each do |book|
-          %li.book= image_tag book.cover_url
+          %li.book
+            = link_to book_path(book) do
+              = image_tag book.cover_url
       .clearfix

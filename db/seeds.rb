@@ -18,7 +18,7 @@ Author.delete_all
 
   10.times do
     Book.create(
-      title: Faker::Company.catch_phrase,
+      title: Faker::Book.title,
       description: Faker::Hacker.say_something_smart,
       cover_url: Faker::Avatar.image(nil, '100x200'),
       author: author,

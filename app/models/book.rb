@@ -4,4 +4,8 @@ class Book < ActiveRecord::Base
   scope :recent_five, -> { order(published_at: :desc).first 5 }
 
   paginates_per 20
+
+  def authors_full_name
+    author.full_name
+  end
 end
