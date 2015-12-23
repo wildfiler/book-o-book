@@ -11,19 +11,18 @@ Author.delete_all
 
 10.times do
   author = Author.create(
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      biography: Faker::Lorem.paragraph(5)
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    biography: Faker::Lorem.paragraph(5)
   )
 
   10.times do
     Book.create(
-        title: Faker::Company.catch_phrase,
-        description: Faker::Hacker.say_something_smart,
-        cover_url: Faker::Avatar.image(nil, '100x200'),
-        author: author,
-        published_at: Faker::Time.between(DateTime.now - 100, DateTime.now)
+      title: Faker::Company.catch_phrase,
+      description: Faker::Hacker.say_something_smart,
+      cover_url: Faker::Avatar.image(nil, '100x200'),
+      author: author,
+      published_at: Faker::Time.between(DateTime.now.current - 100, DateTime.now.current)
     )
   end
-
 end
