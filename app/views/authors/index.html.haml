@@ -1,0 +1,11 @@
+.authors
+  - @authors.each do |author|
+    .author
+      .name
+        = author.first_name
+        = author.last_name
+      .biography= author.biography
+      %ul.author-books
+        - author.last_5_books.each do |book|
+          %li.book= image_tag book.cover_url
+      .clearfix
