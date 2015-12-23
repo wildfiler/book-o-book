@@ -1,7 +1,7 @@
 class Author < ActiveRecord::Base
   has_many :books
 
-  def last_5_books(author)
-    author.books.order(published_at: :desc).first 5
+  def last_5_books
+    books.recent_five
   end
 end
