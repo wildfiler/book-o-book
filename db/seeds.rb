@@ -22,7 +22,7 @@ Author.delete_all
       description: Faker::Hacker.say_something_smart,
       cover_url: Faker::Avatar.image(nil, '100x200'),
       author: author,
-      published_at: Faker::Time.between(DateTime.now.current - 100, DateTime.now.current)
+      published_at: Faker::Time.between(100.days.ago, Time.current)
     )
   end
 end
