@@ -12,4 +12,8 @@ FactoryGirl.define do
     last_name { Faker::Name.last_name }
     biography { Faker::Lorem.paragraph(5) }
   end
+
+  factory :list do
+    title Faker::Company.catch_phrase
+  end
 end

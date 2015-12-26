@@ -8,6 +8,7 @@
 
 Book.delete_all
 Author.delete_all
+List.delete_all
 
 10.times do
   author = Author.create(
@@ -25,4 +26,11 @@ Author.delete_all
       published_at: Faker::Time.between(100.days.ago, Time.current)
     )
   end
+end
+
+3.times do
+  List.create!(
+    title: Faker::Book.title,
+    books: Book.all.order('RANDOM()').limit(10)
+  )
 end

@@ -1,7 +1,9 @@
 class Book < ActiveRecord::Base
   belongs_to :author
+  has_many :list_entries
+  has_many :lists, through: :list_entries
 
-  scope :recent_five, -> { order(published_at: :desc).first 5 }
+  scope :recent_five, -> { order(published_at: :desc).limit(5) }
 
   paginates_per 20
 

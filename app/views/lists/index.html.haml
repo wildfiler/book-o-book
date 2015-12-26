@@ -1,0 +1,10 @@
+%h1 Book Lists
+
+.lists
+  - @lists.each do |list|
+    .list
+      .title
+        %h2= list.title
+      .covers
+        - list.recent_five_books.each do |book|
+          .cover= image_tag(book.cover_url)
