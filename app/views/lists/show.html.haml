@@ -1,0 +1,5 @@
+= @list.title
+
+.books
+  - @list.books.each do |book|
+    = render partial: 'books/book_preview', locals: { book: book }

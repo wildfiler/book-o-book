@@ -2,7 +2,4 @@
 
 .books
   - @books.each do |book|
-    .book
-      .cover= image_tag book.cover_url
-      .title= link_to book.title, book_path(book)
-      .description= book.description
+    = render partial: 'book_preview', locals: { book: book }

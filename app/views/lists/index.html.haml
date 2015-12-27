@@ -4,7 +4,7 @@
   - @lists.each do |list|
     .list
       .title
-        %h2= list.title
+        %h2= link_to list.title, list_path(list)
       .covers
         - list.recent_five_books.each do |book|
           .cover= image_tag(book.cover_url)

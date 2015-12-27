@@ -24,4 +24,14 @@ describe 'User views lists page' do
 
     expect(page).to have_css('.list > .covers > .cover img', count: 5)
   end
+
+  it 'can navigate to individual list' do
+    list = create :list, title: 'Cool list'
+
+    visit lists_path
+
+    click_link 'Cool list'
+
+    expect(page).to have_current_path list_path(list)
+  end
 end
