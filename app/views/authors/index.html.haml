@@ -2,8 +2,7 @@
   - @authors.each do |author|
     .author
       .name
-        = author.first_name
-        = author.last_name
+        = link_to author.full_name,  author_path(author)
       .biography= author.biography
       %ul.author-books
         - author.last_5_books.each do |book|

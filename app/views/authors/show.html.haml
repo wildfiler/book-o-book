@@ -1,0 +1,11 @@
+.author
+  .name= @author.full_name
+  .biography= @author.biography
+  %ul.books
+    - @author.books.each do |book|
+      %li
+        .cover
+          = link_to book_path(book) do
+            = image_tag book.cover_url
+        .title= book.title
+        .description= book.description
