@@ -10,4 +10,10 @@ describe Author do
       expect(full_name).to eq('Obi-Wan Kenobi')
     end
   end
+
+  describe 'validations' do
+    it { should validate_presence_of(:first_name) }
+    it { should validate_presence_of(:last_name) }
+    it { should validate_presence_of(:biography) }
+  end
 end

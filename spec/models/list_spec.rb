@@ -14,4 +14,8 @@ describe List do
       expect(books_titles).to_not include 'Oldest book'
     end
   end
+
+  describe 'validations' do
+    it { should validate_presence_of(:title) }
+  end
 end

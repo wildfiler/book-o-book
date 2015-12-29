@@ -3,6 +3,7 @@ FactoryGirl.define do
     title { Faker::Company.catch_phrase }
     description { Faker::Hacker.say_something_smart }
     cover_url { Faker::Avatar.image(nil, '100x200') }
+    published_at { Faker::Date.between(10.years.ago, 1.year.ago) }
 
     author
   end
