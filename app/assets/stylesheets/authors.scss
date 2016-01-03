@@ -1,0 +1,12 @@
+.author-books {
+  list-style: none;
+
+  .book {
+    float: left;
+    padding-left: 20px;
+
+    img {
+      max-width: 150px;
+    }
+  }
+}
