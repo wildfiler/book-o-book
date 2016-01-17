@@ -2,3 +2,5 @@
   .cover= image_tag book.cover_url
   .title= link_to book.title, book_path(book)
   .description= book.description
+  - book.genres.each do |genre|
+    .genre= link_to genre.name, genre_path(genre)

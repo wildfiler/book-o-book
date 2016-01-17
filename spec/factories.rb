@@ -17,4 +17,8 @@ FactoryGirl.define do
   factory :list do
     title Faker::Company.catch_phrase
   end
+
+  factory :genre do
+    name Faker::Book.genre
+  end
 end

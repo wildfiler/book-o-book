@@ -19,4 +19,15 @@ describe 'User visits books page' do
     expect(page).to have_css('.book', count: 2)
     expect(page).to have_css('.pagination')
   end
+
+  it 'shows genre of books' do
+    book = create :book
+    genres = create_list :genre, 2, books: [book]
+    visit '/books'
+
+    genres.each do |genre|
+      expect(page).to have_css('.genre', text: genre.name)
+      expect(page).to have_link(genre.name, genre_path(genre))
+    end
+  end
 end

@@ -34,3 +34,10 @@ end
     books: Book.all.order('RANDOM()').limit(10)
   )
 end
+
+5.times do
+  Genre.create!(
+    name: Faker::Book.genre,
+    books: Book.all.order('RANDOM()').limit(40)
+  )
+end

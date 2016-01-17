@@ -17,5 +17,6 @@ describe Book do
     it { should validate_presence_of(:description) }
     it { should validate_presence_of(:published_at) }
     it { should validate_presence_of(:cover_url) }
+    it { should have_many(:genres).through(:book_genres) }
   end
 end

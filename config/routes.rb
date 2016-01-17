@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show]
   resources :authors, only: [:index, :show]
   resources :lists, only: [:index, :show]
+  resources :genre, only: [:show]
 
   root 'books#index'
   # The priority is based upon order of creation: first created -> highest priority.

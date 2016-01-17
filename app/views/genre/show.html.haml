@@ -1,0 +1,6 @@
+.genre
+  .title= @genre.name
+  - @genre.books.each do |book|
+    .list
+      .book= link_to book.title, book_path(book)
+      .cover= image_tag(book.cover_url)

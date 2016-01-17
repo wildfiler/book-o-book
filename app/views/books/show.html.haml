@@ -3,4 +3,6 @@
   .cover= image_tag @book.cover_url
   .title= @book.title
   .description= @book.description
+  - @book.genres.each do |genre|
+    .genre= link_to genre.name, genre_path(genre)
   .published_at= @book.published_at.to_date.to_s(:long)
