@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'puma'
 gem 'haml'
+gem 'monban'
 
 group :production do
   gem 'rails_12factor'
@@ -25,6 +26,7 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'web-console'
+  gem 'monban-generators'
 end
 
 group :development, :test do

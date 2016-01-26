@@ -21,4 +21,9 @@ FactoryGirl.define do
   factory :genre do
     name Faker::Book.genre
   end
+
+  factory :user do
+    email Faker::Internet.email
+    password_digest Faker::Internet.password(8)
+  end
 end
