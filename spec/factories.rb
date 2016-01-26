@@ -1,3 +1,5 @@
+Monban.test_mode!
+
 FactoryGirl.define do
   factory :book do
     title { Faker::Company.catch_phrase }
