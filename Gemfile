@@ -13,6 +13,8 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'puma'
 gem 'haml'
+gem 'monban'
+gem 'monban-generators'
 
 group :production do
   gem 'rails_12factor'
