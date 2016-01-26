@@ -8,8 +8,8 @@ describe User do
     it { should validate_presence_of(:password_digest) }
   end
 
-  describe "when email format is invalid" do
-    it "should be invalid" do
+  describe 'when email format is invalid' do
+    it 'should be invalid' do
       user = create :user
       addresses = %w[user@foo,com user_at_foo.org example.user@foo.]
       addresses.each do |invalid_address|
@@ -19,8 +19,8 @@ describe User do
     end
   end
 
-  describe "when email format is valid" do
-    it "should be valid" do
+  describe 'when email format is valid' do
+    it 'should be valid' do
       user = create :user
       addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
       addresses.each do |valid_address|
