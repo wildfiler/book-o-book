@@ -2,3 +2,9 @@
   %li{ class: active_if_on('books') }= link_to 'Books', books_path
   %li{ class: active_if_on('authors') }= link_to 'Authors', authors_path
   %li{ class: active_if_on('lists') }= link_to 'Lists', lists_path
+%ul.sign_up
+- if signed_in?
+  %li= link_to "Sign out", session_path, method: :delete
+- else
+  %li= link_to "Sign in", new_session_path
+  %li= link_to "Sign up", new_user_path
