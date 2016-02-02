@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-Monban.test_mode!
 
 describe User do
   describe 'validations' do
@@ -8,7 +7,7 @@ describe User do
     it { should validate_presence_of(:password_digest) }
   end
 
-  describe "assosiasions" do
+  describe 'assosiasions' do
     it { should have_many(:reviews) }
   end
 

@@ -36,7 +36,7 @@ describe 'User visits book page' do
   end
 
   describe 'signed in' do
-    it "sees other users reviews" do
+    it 'sees other users reviews' do
       book = create :book
       user = create :user, email: 'foo@bar.com'
       other_user = create :user, email: 'foo1@bar.com'
@@ -55,7 +55,7 @@ describe 'User visits book page' do
       expect(page).to have_content('Leave a review')
     end
 
-    it "already write a review" do
+    it 'already write a review' do
       book = create :book
       user = create :user
       review = create :review, user_id: user.id, book_id: book.id
