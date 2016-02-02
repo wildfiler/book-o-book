@@ -2,6 +2,7 @@ class Book < ActiveRecord::Base
   belongs_to :author
   has_many :list_entries
   has_many :lists, through: :list_entries
+  has_many :reviews
 
   validates :title, :description, :published_at, :cover_url, presence: true
 

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
-  resources :books, only: [:index, :show]
+  resources :books, only: [:index, :show] do
+    resources :reviews, only: [:new, :create]
+  end
   resources :authors, only: [:index, :show]
   resources :lists, only: [:index]
 

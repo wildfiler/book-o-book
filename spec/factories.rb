@@ -24,4 +24,10 @@ FactoryGirl.define do
     email Faker::Internet.email
     password_digest Faker::Internet.password(8)
   end
+
+  factory :review do
+    comment Faker::Hacker.say_something_smart
+    user_id Random.new.rand(1..10)
+    book_id Random.new.rand(1..10)
+  end
 end

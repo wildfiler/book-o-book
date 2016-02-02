@@ -34,3 +34,18 @@ end
     books: Book.all.order('RANDOM()').limit(10)
   )
 end
+
+10.times do
+  User.create!(
+  email: Faker::Internet.email,
+  password_digest: Faker::Internet.password(8)
+  )
+end
+
+10.times do
+  Review.create!(
+  comment: Faker::Hacker.say_something_smart,
+  user_id: Random.new.rand(1..10),
+  book_id: Random.new.rand(1..50),
+  )
+end

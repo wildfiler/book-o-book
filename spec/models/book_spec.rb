@@ -18,4 +18,8 @@ describe Book do
     it { should validate_presence_of(:published_at) }
     it { should validate_presence_of(:cover_url) }
   end
+
+  describe "assosiasions" do
+    it { should have_many(:reviews) }
+  end
 end
