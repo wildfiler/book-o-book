@@ -6,3 +6,17 @@
   - @book.genres.each do |genre|
     .genre= link_to genre.name, genre_path(genre)
   .published_at= @book.published_at.to_date.to_s(:long)
+  .review_block
+    - if @reviews.blank?
+      .no_review There is no review for this book yet. Write the first one!
+    - else
+      .review_list
+        - @reviews.each do |review|
+          .comment= review.comment
+          .timestamp Created at #{review.created_at.to_formatted_s(:db)}
+          .author= link_to review.user.email, '#'
+    - if signed_in?
+      - if @user_review.blank?
+        =render partial: 'reviews/form',locals: { book: @book, review: @review }
+    - else
+      .not_signed Please sign in to leave a review
