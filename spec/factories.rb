@@ -17,17 +17,17 @@ FactoryGirl.define do
   end
 
   factory :list do
-    title Faker::Company.catch_phrase
+    title { Faker::Company.catch_phrase }
   end
 
   factory :user do
-    email Faker::Internet.email
-    password_digest Faker::Internet.password(8)
+    sequence(:email) { |n| Faker::Internet.email("user#{n}") }
+    password_digest { Faker::Internet.password(8) }
   end
 
   factory :review do
-    comment Faker::Hacker.say_something_smart
-    user_id Random.new.rand(1..10)
-    book_id Random.new.rand(1..10)
+    user
+    book
+    comment { Faker::Hacker.say_something_smart }
   end
 end
