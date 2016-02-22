@@ -19,4 +19,8 @@ describe Book do
     it { should validate_presence_of(:cover_url) }
     it { should have_many(:genres).through(:book_genres) }
   end
+
+  describe "assosiasions" do
+    it { should have_many(:reviews) }
+  end
 end

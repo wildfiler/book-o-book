@@ -6,6 +6,10 @@ describe User do
     it { should validate_presence_of(:password_digest) }
   end
 
+  describe 'assosiasions' do
+    it { should have_many(:reviews) }
+  end
+
   describe 'when email format is invalid' do
     it 'should be invalid' do
       user = create :user

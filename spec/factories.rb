@@ -1,3 +1,5 @@
+Monban.test_mode!
+
 FactoryGirl.define do
   factory :book do
     title { Faker::Company.catch_phrase }
@@ -15,7 +17,7 @@ FactoryGirl.define do
   end
 
   factory :list do
-    title Faker::Company.catch_phrase
+    title { Faker::Company.catch_phrase }
   end
 
   factory :genre do
@@ -23,7 +25,13 @@ FactoryGirl.define do
   end
 
   factory :user do
-    email Faker::Internet.email
-    password_digest Faker::Internet.password(8)
+    sequence(:email) { |n| Faker::Internet.email("user#{n}") }
+    password_digest { Faker::Internet.password(8) }
+  end
+
+  factory :review do
+    user
+    book
+    comment { Faker::Hacker.say_something_smart }
   end
 end
